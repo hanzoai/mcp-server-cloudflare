@@ -1,7 +1,8 @@
-name: Branches
+name: Test
 on:
   push:
-    branches-ignore: ['main']
+  pull_request:
+  workflow_dispatch:
 
 env:
   FORCE_COLOR: 1
@@ -9,7 +10,7 @@ env:
 jobs:
   test:
     name: Test & Check
-    runs-on: ubuntu-24.04
+    runs-on: hanzo-build-linux-amd64
     permissions:
       contents: read
     timeout-minutes: 10
@@ -30,16 +31,3 @@ jobs:
         run: pnpm check:format
       - name: Run tests
         run: pnpm test
-
-  build-workers:
-    name: Build Workers
-    runs-on: ubuntu-24.04
-    permissions:
-      contents: read
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
-
-      - name: Build Workers
-        run: pnpm turbo deploy -- -e staging --dry-run
