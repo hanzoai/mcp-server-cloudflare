@@ -1,23 +1,23 @@
 {
-	"name": "@repo/mcp-observability",
-	"version": "0.32.0",
-	"private": true,
-	"sideEffects": false,
-	"type": "module",
-	"main": "./src/index.ts",
-	"scripts": {
-		"types": "wrangler types --include-env=false"
-	},
-	"directories": {
-		"bin": "bin"
-	},
-	"dependencies": {
-		"@modelcontextprotocol/sdk": "1.11.3",
-		"wrangler": "4.10.0",
-		"zod": "3.24.2"
-	},
-	"devDependencies": {
-		"@repo/typescript-config": "workspace:*",
-		"@types/node": "22.14.1"
-	}
+  "name": "@repo/mcp-observability",
+  "version": "0.32.0",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "types": "wrangler types --include-env=false"
+  },
+  "directories": {
+    "bin": "bin"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "catalog:",
+    "wrangler": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "catalog:"
+  }
 }
